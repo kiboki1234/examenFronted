@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import "./App.css";
 
 const API_URL = "https://examenparcial3web.onrender.com/api/supplier/sale";
 
@@ -59,7 +60,7 @@ const App = () => {
   return (
     <div className="container">
       <h1>Gestión de Proveedores</h1>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className="form">
         <input
           type="text"
           name="idSaller"
@@ -80,9 +81,9 @@ const App = () => {
           {loading ? "Guardando..." : "Agregar"}
         </button>
       </form>
-      {error && <p style={{ color: "red" }}>{error}</p>}
+      {error && <p className="error">{error}</p>}
       <h2>Lista de Proveedores</h2>
-      <table>
+      <table className="table">
         <thead>
           <tr>
             <th>ID Vendedor</th>
